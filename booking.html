@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Flight Aggregator</title>
+  <link href="booking.css" rel="stylesheet">
+  <script src="payment.js"></script>
+  <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="base">
+  <div class="header">
+    <img src="C:\Users\Asus\Desktop\4th Sem\CS232\sem project\New folder\aviation_logo-14.jpg" class="logo">
+    <nav>
+     <ul class="navi">
+       <li><a href="" target="_blank">HOME</a></li>
+       <li><a href="" target="_blank">PERSONAL INFO</a></li>
+     </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="upper">
+       <nav class="icons">
+           <a onclick="activateTab(0)" class="tab tab-active">
+            <i class="fa fa-solid fa fa-book" id="book"></i>
+           </a>
+           <a onclick="activateTab(1)" class="tab">
+            <i class="fa fa-sharp fa fa-solid fa fa-file"></i>
+           </a>
+       </nav>
+       <div class="bottom">
+        <div class="tab-panel">
+          <h1>Bookings</h1>
+           <div class="bookings">
+               
+               <h2>Flying From:</h2>
+               <input type="text" class="input" value="Karachi">
+               <h2>Flying To:</h2>
+               <input type="text" class="input" value="Dubai">
+               <h2>Airline:</h2>
+               <input type="text" class="input" value="Pakistan Internation Airlines">
+               <h2>Departure Date:</h2>
+               <input type="text" class="input" value="2022-05-20">
+           <h2>Time of Flight:</h2>
+           <input type="text" class="input" value="01:07">
+       </div>
+       </div>
+       <div class="tab-panel">
+        <h1>History</h1>
+       <div class="history">
+           
+             <h2>Flew From:</h2>
+             <input type="text" class="input" value="Karachi">  
+           <h2>Flew to:</h2>
+           <input type="text" class="input" value="Dubai">
+           <h2>Date:</h2>
+           <input type="text" class="input" value="2022-05-20">
+           <h2>Airline:</h2>
+           <input type="text" class="input" value="Pakistan Internation Airlines">
+       </div>
+       </div>
+   </div>
+   </div>
+
+   <script>
+    const tabBtns = document.querySelectorAll(".tab");
+    const tabs = document.querySelectorAll(".tab-panel");
+    
+    function activateTab(panelIndex) {
+      tabs.forEach(function(tab) {
+        tab.style.display = "none";
+      });
+      tabs[panelIndex].style.display = "block";
+    }
+    
+    tabBtns.forEach(function(tab, index) {
+      tab.addEventListener("click", function() {
+        activateTab(index);
+      });
+    });
+    
+    activateTab(0);
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Flight Aggregator</title>
+  <link href="payment.css" rel="stylesheet">
+  <script src="payment.js"></script>
+  <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="base">
+  <div class="header">
+    <img src="New folder\aviation_logo-14.jpg" class="logo">
+    <nav>
+     <ul class="navi">
+       <li><a href="" target="_blank">  HOME </a></li>
+     </ul>
+    </nav>
+  </div>
+  <div class="banner">
+    <div class="top-header">
+      <header> Payment </header>
+    </div>
+    <div class="block-container">
+      <div class="block" data-payment="none">
+        <img src="New folder/3c6d674e1136cb01168ae28cb73beb2d.png" style="max-width: 100%; height: 100%;">
+      </div>
+      <div class="block" data-payment="credit_card">
+        <img src="New folder/PngItem_16155.png" style="max-width: 100%; height: 100%;">
+      </div>
+      <div class="block" data-payment="easypaisa_jazzcash">
+        <img src="New folder/word-image-135.jpeg" style="max-width: 100%; height: 100%;">
+      </div>
+      <div class="block" data-payment="bank_details">
+        <img src="New folder/Top-10-Most-Profitable-Banks-Of-Pakistan-1.png" style="max-width: 100%; height: 100%;">
+      </div>
+    </div>
+    <div class="payment-details">
+      <div id="credit_card" class="payment-details-row" style="display:none;">
+        <div class="form-row">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number">
+        </div>
+        <div class="form-row">
+          <label for="expiration-date">Expiration Date:</label>
+          <input type="text" id="expiration-date">
+        </div>
+        <div class="form-row">
+          <label for="cvv">CVV:</label>
+          <input type="text" id="cvv">
+        </div>
+      </div>
+  
+      <div id="easypaisa_jazzcash" class="payment-details-row" style="display:none;">
+        <div class="form-row">
+          <label for="CNIC">CNIC:</label>
+          <input type="text" id="CNIC">
+        </div>
+        <div class="form-row">
+          <label for="phone-number">Phone Number:</label>
+          <input type="text" id="number">
+        </div>
+      </div>
+  
+      <div id="bank_details" class="payment-details-row" style="display:none;">
+        <div class="form-row">
+          <label for="Bank-Name">Bank Name:</label>
+          <input type="text" id="Bank">
+        </div>
+        <div class="form-row">
+          <label for="Account-Number">Account Number:</label>
+          <input type="text" id="account-number">
+        </div>
+        <div class="form-row">
+          <label for="cvv">CVV:</label>
+          <input type="text" id="cvv">
+        </div>
+      </div>
+  </div>
+
+
+  <div class="input-field">
+    <input type="submit" class="submit" value="Pay Now" required>
+ </div>
+
+  </div>
+   
+  </div>
+
+
+
+  <script>
+    const blocks = document.querySelectorAll('.block');
+    blocks.forEach(block => {
+      block.addEventListener('click', () => {
+        const paymentType = block.dataset.payment;
+        const paymentDetails = document.getElementById(paymentType);
+        const allPaymentDetails = document.querySelectorAll('.payment-details-row');
+        allPaymentDetails.forEach(details => {
+          details.style.display = 'none';
+        });
+        paymentDetails.style.display = 'block';
+      });
+    });
+  </script>
+  
+  
+
+
+</body>
+</html>
